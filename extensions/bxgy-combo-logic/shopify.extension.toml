@@ -1,0 +1,32 @@
+api_version = "2026-07"
+
+[[extensions]]
+name = "t:name"
+handle = "bxgy-combo-logic"
+type = "function"
+uid = "2ce31c67-966c-110c-af45-bf8c97fdfde5793e57ad"
+description = "t:description"
+
+  [[extensions.targeting]]
+  target = "cart.lines.discounts.generate.run"
+  input_query = "src/cart_lines_discounts_generate_run.graphql"
+  export = "cart-lines-discounts-generate-run"
+
+  [[extensions.targeting]]
+  target = "cart.delivery-options.discounts.generate.run"
+  input_query = "src/cart_delivery_options_discounts_generate_run.graphql"
+  export = "cart-delivery-options-discounts-generate-run"
+
+  # Shopify CLI 3.90 reads this table. Target-level input_variables needs CLI 4.9+.
+  [extensions.input.variables]
+  namespace = "$app"
+  key = "function-configuration"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"
+
+  # Native Shopify discount editor. Do not set ui.paths; that opens the app instead.
+  [extensions.ui]
+  enable_create = true
+  handle = "bxgy-combo-settings"

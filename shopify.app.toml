@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "bfa381d867ad59ce7e69c85a481032a6"
+name = "BXGY Combo Discount"
+application_url = "https://example.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
+
+[webhooks]
+api_version = "2027-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# write_discounts is required for the discount type to open Shopify's discount editor.
+# write_products stays for the template product action and the resource picker.
+scopes = "write_products,read_products,write_discounts"
+
+# Lets the discount details page store this function's settings.
+[discount.metafields.app.function-configuration]
+type = "json"
+name = "Function configuration"
+access.admin = "merchant_read_write"
+
+
+[auth]
+redirect_urls = [ "https://example.com/api/auth" ]

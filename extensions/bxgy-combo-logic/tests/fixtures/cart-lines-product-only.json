@@ -1,0 +1,102 @@
+{
+  "payload": {
+    "export": "cart-lines-discounts-generate-run",
+    "target": "cart.lines.discounts.generate.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/0",
+            "quantity": 2,
+            "cost": {
+              "amountPerQuantity": {"amount": "25.0"},
+              "subtotalAmount": {"amount": "50.0"}
+            },
+            "parentRelationship": null,
+            "sellingPlanAllocation": null,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/11",
+              "product": {
+                "id": "gid://shopify/Product/1",
+                "isGiftCard": false,
+                "inBuysCollection": false,
+                "inGetsCollection": false
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/1",
+            "quantity": 1,
+            "cost": {
+              "amountPerQuantity": {"amount": "40.0"},
+              "subtotalAmount": {"amount": "40.0"}
+            },
+            "parentRelationship": null,
+            "sellingPlanAllocation": null,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/22",
+              "product": {
+                "id": "gid://shopify/Product/2",
+                "isGiftCard": false,
+                "inBuysCollection": false,
+                "inGetsCollection": false
+              }
+            }
+          }
+        ]
+      },
+      "discount": {
+        "discountClasses": ["PRODUCT"],
+        "metafield": {
+          "jsonValue": {
+            "buysCollectionIds": [],
+            "getsCollectionIds": [],
+            "customerBuys": {
+              "requirement": "quantity",
+              "quantity": 1,
+              "amount": "0",
+              "itemType": "products",
+              "purchaseType": "BOTH",
+              "products": [{"id": "gid://shopify/Product/1", "variantIds": []}],
+              "collections": []
+            },
+            "customerGets": {
+              "quantity": 1,
+              "itemType": "products",
+              "purchaseType": "BOTH",
+              "products": [{"id": "gid://shopify/Product/2", "variantIds": []}],
+              "collections": []
+            },
+            "discountValue": {
+              "type": "percentage",
+              "percentage": 20,
+              "fixedAmount": "0"
+            },
+            "maxUsesPerOrder": null
+          }
+        }
+      },
+      "presentmentCurrencyRate": "1.0"
+    },
+    "output": {
+      "operations": [
+        {
+          "productDiscountsAdd": {
+            "candidates": [
+              {
+                "targets": [
+                  {"cartLine": {"id": "gid://shopify/CartLine/0", "quantity": 1}},
+                  {"cartLine": {"id": "gid://shopify/CartLine/1", "quantity": 1}}
+                ],
+                "value": {"percentage": {"value": 20.0}}
+              }
+            ],
+            "selectionStrategy": "ALL"
+          }
+        }
+      ]
+    }
+  }
+}
