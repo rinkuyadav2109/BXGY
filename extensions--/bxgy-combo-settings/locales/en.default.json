@@ -1,0 +1,62 @@
+{
+  "name": "BXGY combo discount",
+  "description": "Discounts both product groups when they are purchased together, up to the quantities you set.",
+  "title": "Discount value",
+  "intro": "When a customer adds both groups, the discount applies to Customer buys and Customer gets. Only the quantities you set are discounted, so an extra unit stays full price.",
+  "repeat": "Each additional complete set is discounted too, unless you set a maximum number of uses. For a limited quantity, the lowest-priced units are discounted.",
+  "customerBuys": {
+    "label": "Customer buys",
+    "help": "Customers must add the quantity of items specified below. These items and the Customer gets items both receive the discount.",
+    "quantity": "Quantity"
+  },
+  "customerGets": {
+    "label": "Customer gets",
+    "help": "Customers must add the quantity of items specified below as well. These items and the Customer buys items both receive the discount.",
+    "quantity": "Quantity"
+  },
+  "itemsFrom": "Any items from",
+  "purchaseType": {
+    "label": "Purchase type",
+    "oneTime": "One-time purchase",
+    "subscription": "Subscription",
+    "both": "Both"
+  },
+  "itemType": {
+    "products": "Specific products",
+    "collections": "Specific collections"
+  },
+  "search": {
+    "products": "Search products",
+    "collections": "Search collections",
+    "browse": "Browse",
+    "remove": "Remove"
+  },
+  "discountValue": {
+    "label": "At a discounted value",
+    "help": "The same value applies to each discounted unit in both groups.",
+    "percentage": "Percentage",
+    "fixed": "Amount off each"
+  },
+  "restrictQuantity": {
+    "label": "Restrict quantity",
+    "help": "When selected, the discount applies to only 1 unit of Customer buys and 1 unit of Customer gets. Extra units stay full price."
+  },
+  "maxUses": {
+    "label": "Set a maximum number of uses per order",
+    "quantity": "Maximum uses per order",
+    "help": "Each use discounts one set of the quantities above."
+  },
+  "errors": {
+    "summary": "Complete the required fields before saving.",
+    "quantity": "Enter a whole number greater than 0.",
+    "amount": "Enter an amount greater than 0.",
+    "percentage": "Enter a percentage greater than 0 and up to 100.",
+    "products": "Add at least one product.",
+    "collections": "Add at least one collection.",
+    "tooManyProducts": "You can add up to 100 products.",
+    "tooManyCollections": "You can add up to 100 collections.",
+    "maxUses": "Enter a whole number of uses greater than 0.",
+    "save": "Unable to save this discount. Try again.",
+    "discountClass": "Unable to set this discount to products. Try again."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "payload": {
+    "export": "cart-lines-discounts-generate-run",
+    "target": "cart.lines.discounts.generate.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/0",
+            "quantity": 1,
+            "cost": {
+              "amountPerQuantity": {"amount": "100.0"},
+              "subtotalAmount": {"amount": "100.0"}
+            },
+            "parentRelationship": null,
+            "sellingPlanAllocation": null,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/1",
+              "product": {
+                "id": "gid://shopify/Product/1",
+                "isGiftCard": false,
+                "inBuysCollection": false,
+                "inGetsCollection": false
+              }
+            }
+          }
+        ]
+      },
+      "discount": {
+        "discountClasses": ["ORDER"],
+        "metafield": null
+      },
+      "presentmentCurrencyRate": "1.0"
+    },
+    "output": {
+      "operations": []
+    }
+  }
+}

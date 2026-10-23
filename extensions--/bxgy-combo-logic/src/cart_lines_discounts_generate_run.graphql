@@ -1,0 +1,45 @@
+query CartInput($buysCollectionIds: [ID!], $getsCollectionIds: [ID!]) {
+  cart {
+    lines {
+      id
+      quantity
+      cost {
+        amountPerQuantity {
+          amount
+        }
+        subtotalAmount {
+          amount
+        }
+      }
+      parentRelationship {
+        parent {
+          id
+        }
+      }
+      sellingPlanAllocation {
+        sellingPlan {
+          id
+        }
+      }
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          product {
+            id
+            isGiftCard
+            inBuysCollection: inAnyCollection(ids: $buysCollectionIds)
+            inGetsCollection: inAnyCollection(ids: $getsCollectionIds)
+          }
+        }
+      }
+    }
+  }
+  discount {
+    discountClasses
+    metafield(namespace: "$app", key: "function-configuration") {
+      jsonValue
+    }
+  }
+  presentmentCurrencyRate
+}
